@@ -35,7 +35,7 @@ class Config
     const DEBUG_MODE = false;
 
     // ------------------------------------------------------------------------
-    // DATABASE SETTINGS
+    // DATABASE SETTINGS 
     // ------------------------------------------------------------------------
 
     const DB_HOST = 'localhost';
