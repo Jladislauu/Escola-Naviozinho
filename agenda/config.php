@@ -40,7 +40,7 @@ class Config
 
     const DB_HOST = 'localhost';
     const DB_NAME = 'u292296724_naviozinhodb';
-    const DB_USERNAME = 'u292296724_naviozinho';
+    const DB_USERNAME = 'u292296724_naviozinhodb';
     const DB_PASSWORD = 'u68?v7R>';
 
     // ------------------------------------------------------------------------
