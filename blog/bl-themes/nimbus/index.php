@@ -28,7 +28,7 @@
         <div class="container">
           <ol>
             <?php
-              if ($WHERE_AM_I != 'home') { echo '<li><a href="https://lightgrey-manatee-733013.hostingersite.com/">Site</a></li>'; }
+              if ($WHERE_AM_I != 'home') { echo '<li><a href="'.$site->url().'">Home</a></li>'; }
               if ($WHERE_AM_I == 'page') {
                 if ($page->categoryPermalink()) {
                   echo '<li><a href="'.$page->categoryPermalink().'">'.$page->category().'</a></li>';
