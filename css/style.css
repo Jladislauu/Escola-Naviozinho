@@ -580,14 +580,15 @@ h6,
   color: #fff;
   width: 100%;
   padding: 18px;
-  background: linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.18));
+  background: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.25));
   border-radius: 8px;
 }
 .navio-carousel .slide-title {
   margin: 0 0 8px;
-  font-size: 1.25rem;
+  font-size: 1.50rem;
   font-weight: 700;
   line-height: 1.15;
+  color: rgba(255,255,255,0.95);
 }
 .navio-carousel .slide-text {
   margin: 0;
