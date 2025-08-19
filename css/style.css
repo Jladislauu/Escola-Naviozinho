@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-    --primary: #FE5D37;
+    --primary: #22406b;
     --light: #FFF5F3;
     --dark: #103741;
 }
@@ -358,18 +358,19 @@ h6,
 /*** Team ***/
 .team-item .team-text {
     position: absolute;
-    width: 250px;
-    height: 250px;
+    width: 165px;
+    height: 165px;
     bottom: 0;
-    right: 0;
+    left: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     background: #FFFFFF;
-    border: 17px solid var(--light);
+    border: 5px solid var(--light);
     border-radius: 250px;
     transition: .5s;
+    font-size: 15px;
 }
 
 .team-item:hover .team-text {
@@ -500,4 +501,165 @@ h6,
     margin-right: 0;
     padding-right: 0;
     border-right: none;
+}
+
+
+
+/* Carrossel — Naviozinho (cole no seu arquivo de estilos) */
+.navio-carousel {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 18px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #0f172a;
+}
+
+.navio-carousel .carousel-viewport {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 8px 28px rgba(16,24,40,0.06);
+  --carousel-height: 320px;
+  height: var(--carousel-height);
+}
+
+/* maior em telas grandes */
+@media(min-width: 768px){
+  .navio-carousel .carousel-viewport { --carousel-height: 420px; }
+}
+
+/* trilho (flex) */
+.navio-carousel .carousel-track {
+  display: flex;
+  height: 100%;
+  transition: transform .42s cubic-bezier(.2,.9,.3,1);
+  will-change: transform;
+  touch-action: pan-y;
+}
+
+/* cada slide ocupa 100% do viewport do carrossel */
+.navio-carousel .carousel-slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: flex-end; /* texto na parte inferior */
+  box-sizing: border-box;
+  padding: 16px;
+}
+
+/* imagem atrás do conteúdo */
+.navio-carousel .slide-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+.navio-carousel .slide-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  filter: none;
+  transform-origin: center;
+}
+
+/* camada de degradê para legibilidade do texto */
+.navio-carousel .slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.46) 100%);
+  z-index:1;
+}
+
+/* conteúdo do slide */
+.navio-carousel .slide-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.18));
+  border-radius: 8px;
+}
+.navio-carousel .slide-title {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+.navio-carousel .slide-text {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: rgba(255,255,255,0.95);
+}
+
+/* Botões next/prev */
+.navio-carousel .carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 6;
+  border: 0;
+  background: rgba(255,255,255,0.9);
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow: 0 6px 16px rgba(16,24,40,0.12);
+  cursor: pointer;
+}
+.navio-carousel .carousel-btn:active{ transform: translateY(-50%) scale(.98); }
+.navio-carousel .carousel-btn[aria-disabled="true"]{ opacity:.5; cursor:default; }
+.navio-carousel .btn-prev { left: 12px; }
+.navio-carousel .btn-next { right: 12px; }
+
+.navio-carousel .carousel-btn svg{ width:18px; height:18px; color:#111827; }
+
+/* indicadores (dots) */
+.navio-carousel .carousel-dots {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 12px;
+  display:flex;
+  gap:8px;
+  z-index:7;
+}
+.navio-carousel .dot {
+  width:10px; height:10px; border-radius:50%;
+  background: rgba(255,255,255,0.6);
+  border: 0;
+  padding:0;
+  cursor:pointer;
+}
+.navio-carousel .dot[aria-current="true"]{ background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+
+/* Acessibilidade escondido visualmente */
+.visually-hidden{ position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap }
+
+/* reduz motion */
+@media (prefers-reduced-motion: reduce) {
+  .navio-carousel .carousel-track { transition: none; }
+}
+
+/* boa prática: evitar conflitos com outras classes (prefix único) */
+
+
+/* ajuste da imagem da section agendar visita */
+
+/* Seletor para a imagem específica */
+img[src="img/faça-agendamento.jpg"] {
+    object-fit: contain !important;  /* Mostra a imagem inteira sem corte */
+    width: 100%;                     /* Mantém largura total */
+    height: auto;                    /* Ajusta altura automaticamente para manter proporção */
+}
+
+/* Opcional: Ajuste o container para não forçar altura mínima rígida */
+.col-lg-6[style*="min-height: 400px;"] {
+    min-height: auto;  /* Remove a altura mínima forçada, deixando responsivo */
 }
